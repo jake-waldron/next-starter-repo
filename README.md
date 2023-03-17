@@ -1,5 +1,11 @@
 # Next.js + Tailwindcss + Jest + Cypress Starter
 
+## Requirements
+
+- [pnpm](https://pnpm.io/)
+- [zsh](https://www.zsh.org/)
+- zmv - Add `autoload -U zmv` to `~/.zshrc`
+
 ## Setup
 
 1. Start new project with `pnpm create next-app --example https://github.com/jake-waldron/next-starter-repo`
