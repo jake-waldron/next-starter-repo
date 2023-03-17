@@ -1,6 +1,4 @@
-# Next.js + Tailwindcss + Jest + Cypress
-
-Starter Repo
+# Next.js + Tailwindcss + Jest + Cypress Starter
 
 TODO:
 
