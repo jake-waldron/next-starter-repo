@@ -1,0 +1,37 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["testing-library", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    },
+    // use Cypress lint rules in Cypress test files
+    {
+      "files": ["cypress/e2e/**/*.cy.js", "cypress/support/*"],
+      "extends": ["plugin:cypress/recommended"],
+      "env": { "cypress/globals": true }
+    }
+  ]
+}
