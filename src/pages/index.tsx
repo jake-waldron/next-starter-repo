@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -7,8 +8,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen w-full items-center justify-center">
+      <main className="flex h-screen w-full flex-col items-center justify-center">
         <h1>Hello World!</h1>
+        <Link href="/about">About</Link>
       </main>
     </>
   );
