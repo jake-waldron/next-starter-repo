@@ -6,11 +6,11 @@ export default function NewUser() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log("name", name);
     console.log("email", email);
-    fetch("/api/users", {
+    await fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
