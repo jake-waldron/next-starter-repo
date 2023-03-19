@@ -6,6 +6,7 @@ const userData = [
   {
     name: "Alice",
     email: "alice@prisma.io",
+    username: "alice123",
     posts: {
       create: [
         {
@@ -19,6 +20,7 @@ const userData = [
   {
     name: "Nilu",
     email: "nilu@prisma.io",
+    username: "nilu123",
     posts: {
       create: [
         {
@@ -32,6 +34,7 @@ const userData = [
   {
     name: "Mahmoud",
     email: "mahmoud@prisma.io",
+    username: "mahmoud123",
     posts: {
       create: [
         {

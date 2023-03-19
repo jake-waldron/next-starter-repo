@@ -1,23 +1,33 @@
 import React from "react";
+import { Prisma } from "@prisma/client";
 import { useRouter } from "next/router";
 
 export default function NewUser() {
   const router = useRouter();
   const [name, setName] = React.useState("");
+  const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log("name", name);
+    console.log("username", username);
     console.log("email", email);
+    const user: Prisma.UserUncheckedCreateInput = {
+      name,
+      username,
+      email,
+    };
+
     await fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify(user),
     });
     setName("");
+    setUsername("");
     setEmail("");
     router.push("/");
   }
@@ -35,6 +45,14 @@ export default function NewUser() {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="border border-slate-500 p-2"
+        />
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="border border-slate-500 p-2"
         />
         <label htmlFor="email">Email</label>
