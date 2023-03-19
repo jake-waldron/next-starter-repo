@@ -8,11 +8,7 @@ generator client {
 datasource db {
   // Set provider : sqlite | postgresql | mysql
   provider = "sqlite"
-
-  // If using a SQLite database, uncomment the following line:
-  url = "file:./dev.db"
-  // If using a PostgreSQL/MySQL database, uncomment the following lines:
-  // url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 // Define your models here
