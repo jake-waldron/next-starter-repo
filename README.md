@@ -12,7 +12,7 @@
 2. Run `zmv -w '.env(*.)local.example' '.env${1}local'` to rename env files
    - Example: `.env.local.example` to `.env.local`
 3. Set environment variables
-4. Run `pnpx prisma migrate dev --name init` to create database
+4. Run `dotenv -e .env.development.local pnpx prisma migrate dev --name init` to create database for development
 
 TODO:
 
