@@ -12,6 +12,9 @@ export default function NewUser() {
     console.log("email", email);
     fetch("/api/users", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ name, email }),
     });
     setName("");

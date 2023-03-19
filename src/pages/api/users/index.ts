@@ -18,13 +18,13 @@ export default async function handler(
         email,
       },
     });
-    res.status(200).json(user);
+    return res.status(200).json(user);
   }
   if (method === "GET") {
     // do something
     const users = await prisma.user.findMany();
-    res.status(200).json(users);
+    return res.status(200).json(users);
   }
 
-  res.status(405).json({ message: "Method not allowed" });
+  return res.status(405).json({ message: "Method not allowed" });
 }
