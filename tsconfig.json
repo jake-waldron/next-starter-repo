@@ -26,5 +26,10 @@
     "types.d.ts",
     "jest.setup.js"
   ],
-  "exclude": ["node_modules", "./cypress.config.ts", "./cypress"]
+  "exclude": ["node_modules", "./cypress.config.ts", "./cypress"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }
