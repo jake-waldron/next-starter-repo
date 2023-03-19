@@ -10,7 +10,7 @@ export default function NewUser() {
     e.preventDefault();
     console.log("name", name);
     console.log("email", email);
-    fetch("/api/users/new", {
+    fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

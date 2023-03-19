@@ -1,13 +1,10 @@
 import type { User } from "@prisma/client";
-import Link from "next/link";
 
 import prisma from "@/lib/prisma";
 
 export default function Home({ users }: { users: User[] }) {
   return (
     <main className="flex h-screen w-full flex-col items-center justify-center">
-      <h1>Hello World!</h1>
-      <Link href="/about">About</Link>
       <div className="w-1/2">
         {users.map((user) => (
           <div key={user.id} className="flex justify-between">
