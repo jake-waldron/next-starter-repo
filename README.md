@@ -1,4 +1,4 @@
-# Next.js + Tailwindcss + Jest + Cypress Starter
+# Next.js + Tailwindcss + Jest + Cypress + Prisma Starter
 
 ## Requirements
 
@@ -12,9 +12,5 @@
 2. Run `zmv -w '.env(*.)local.example' '.env${1}local'` to rename env files
    - Example: `.env.local.example` to `.env.local`
 3. Set environment variables
-4. Run `dotenv -e .env.development.local pnpx prisma migrate dev --name init` to create database for development
-
-TODO:
-
-- [ ] Add Prisma
-- [ ] Add Supabase
+4. Run `prisma generate` to set up Prisma for development
+5. Run `dotenv -e .env.development.local prisma db push` to set up database with Prisma Schema
