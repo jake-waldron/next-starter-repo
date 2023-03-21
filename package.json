@@ -10,9 +10,9 @@
     "test": "dotenv -e .env.test.local jest --watch",
     "test:ci": "dotenv -e .env.test.local jest --ci",
     "cypress:open": "dotenv -e .env.test.local cypress open",
-    "cypress:start": "start-server-and-test 'npm run start:test' 3000 'npm run cypress:open'",
-    "cypress:build": "npm run build:test && npm run cypress:start",
-    "cypress:run": "start-server-and-test 'npm run start:test' 3000 'dotenv -e .env.test.local cypress run'"
+    "cypress:start": "start-server-and-test 'pnpm run start:test' 3000 'pnpm run cypress:open'",
+    "cypress:build": "pnpm run build:test && pnpm run cypress:start",
+    "cypress:run": "start-server-and-test 'pnpm run start:test' 3000 'dotenv -e .env.test.local cypress run'"
   },
   "dependencies": {
     "@prisma/client": "^4.11.0",

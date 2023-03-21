@@ -9,8 +9,6 @@ datasource db {
   // Set provider : sqlite | postgresql | mysql
   provider = "sqlite"
   url      = env("DATABASE_URL")
-  // Uncomment the following line if using Supabase
-  // directUrl = env("DIRECT_URL")
 }
 
 // Define your models here

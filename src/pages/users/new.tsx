@@ -13,7 +13,7 @@ export default function NewUser() {
     console.log("name", name);
     console.log("username", username);
     console.log("email", email);
-    const user: Prisma.UserUncheckedCreateInput = {
+    const user: Prisma.UserCreateInput = {
       name,
       username,
       email,
