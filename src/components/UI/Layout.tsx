@@ -1,8 +1,18 @@
 import React from "react";
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const supabase = useSupabaseClient();
+  const user = useUser();
+
+  function handleSignout() {
+    supabase.auth.signOut();
+    router.push("/");
+  }
   return (
     <>
       <Head>
@@ -18,9 +28,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li>
             <Link href="/about">About</Link>
           </li>
-          <li>
-            <Link href="/users/new">Add New User</Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link href="/user/profile">Profile</Link>
+              </li>
+              <li>
+                <button onClick={handleSignout}>Sign Out</button>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link href="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </nav>
       {children}

@@ -1,73 +1,77 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+// LEAVING THIS AS AN EXAMPLE
 
-const prisma = new PrismaClient();
+// import { Prisma, PrismaClient } from "@prisma/client";
 
-const userData = [
-  {
-    name: "Alice",
-    email: "alice@prisma.io",
-    username: "alice123",
-    posts: {
-      create: [
-        {
-          title: "Join the Prisma Slack",
-          content: "https://slack.prisma.io",
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: "Nilu",
-    email: "nilu@prisma.io",
-    username: "nilu123",
-    posts: {
-      create: [
-        {
-          title: "Follow Prisma on Twitter",
-          content: "https://www.twitter.com/prisma",
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: "Mahmoud",
-    email: "mahmoud@prisma.io",
-    username: "mahmoud123",
-    posts: {
-      create: [
-        {
-          title: "Ask a question about Prisma on GitHub",
-          content: "https://www.github.com/prisma/prisma/discussions",
-          published: true,
-        },
-        {
-          title: "Prisma on YouTube",
-          content: "https://pris.ly/youtube",
-        },
-      ],
-    },
-  },
-] satisfies Prisma.UserCreateInput[];
+// const prisma = new PrismaClient();
 
-async function main() {
-  console.log(`Start seeding ...`);
-  for (const u of userData) {
-    const user = await prisma.user.create({
-      data: u,
-    });
-    console.log(`Created user with id: ${user.id}`);
-  }
-  console.log(`Seeding finished.`);
-}
+// const userData = [
+//   {
+//     name: "Alice",
+//     email: "alice@prisma.io",
+//     username: "alice123",
+//     posts: {
+//       create: [
+//         {
+//           title: "Join the Prisma Slack",
+//           content: "https://slack.prisma.io",
+//           published: true,
+//         },
+//       ],
+//     },
+//   },
+//   {
+//     name: "Nilu",
+//     email: "nilu@prisma.io",
+//     username: "nilu123",
+//     posts: {
+//       create: [
+//         {
+//           title: "Follow Prisma on Twitter",
+//           content: "https://www.twitter.com/prisma",
+//           published: true,
+//         },
+//       ],
+//     },
+//   },
+//   {
+//     name: "Mahmoud",
+//     email: "mahmoud@prisma.io",
+//     username: "mahmoud123",
+//     posts: {
+//       create: [
+//         {
+//           title: "Ask a question about Prisma on GitHub",
+//           content: "https://www.github.com/prisma/prisma/discussions",
+//           published: true,
+//         },
+//         {
+//           title: "Prisma on YouTube",
+//           content: "https://pris.ly/youtube",
+//         },
+//       ],
+//     },
+//   },
+// ] satisfies Prisma.UserCreateInput[];
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+// async function main() {
+//   console.log(`Start seeding ...`);
+//   for (const u of userData) {
+//     const user = await prisma.user.create({
+//       data: u,
+//     });
+//     console.log(`Created user with id: ${user.id}`);
+//   }
+//   console.log(`Seeding finished.`);
+// }
+
+// main()
+//   .then(async () => {
+//     await prisma.$disconnect();
+//   })
+//   .catch(async (e) => {
+//     console.error(e);
+//     await prisma.$disconnect();
+//     process.exit(1);
+//   });
+
+export {};
