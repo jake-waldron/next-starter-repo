@@ -1,4 +1,4 @@
-# Next.js + Tailwindcss + Jest + Cypress + Prisma Starter
+# Next.js + Tailwindcss + Jest + Cypress + Prisma + Supabase Starter
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 
 ## Setup
 
-1. Start new project with `pnpm create next-app --example https://github.com/jake-waldron/next-starter-repo/tree/prisma`
+1. Start new project with `pnpm create next-app --example https://github.com/jake-waldron/next-starter-repo/tree/supabase`
 2. Run `zmv -w '.env(*.)local.example' '.env${1}local'` to rename env files
    - Example: `.env.local.example` to `.env.local`
 3. Set environment variables
@@ -38,7 +38,3 @@ Add Trigger: https://app.supabase.com/project/{ProjectID}/database/triggers
 - Event: `INSERT`
 - Trigger type: `After the event`
 - Enabled mode: `Origin`
-
-TODO:
-
-- [ ] Add "Sign In" page, to sign in there - make generic index page
