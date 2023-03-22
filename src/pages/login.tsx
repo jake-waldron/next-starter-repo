@@ -10,11 +10,17 @@ export default function Login() {
   const router = useRouter();
 
   React.useEffect(() => {
-    if (session) {
-      // Redirect to home page if already signed in using next router
-      router.push("/");
-    }
-  }, [session]);
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (event == "SIGNED_OUT") router.push("/");
+    });
+  }, []);
+
+  // React.useEffect(() => {
+  //   if (session) {
+  //     // Redirect to home page if already signed in using next router
+  //     router.push("/");
+  //   }
+  // }, [session]);
 
   return (
     <main className="flex h-screen w-full flex-col items-center justify-center">
