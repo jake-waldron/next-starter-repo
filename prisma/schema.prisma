@@ -12,9 +12,9 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-// Define your models here
+// User model for Supabase auth
 model User {
-  id    String  @unique @db.Uuid
+  id    String  @unique @db.Uuid // this lets the supabase.auth schema match
   email String  @unique
   name  String?
   posts Post[]
@@ -22,6 +22,7 @@ model User {
   @@map("users")
 }
 
+// Define your models here
 model Post {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
