@@ -17,7 +17,7 @@ export default function Login() {
     <main className="flex h-screen w-full flex-col items-center justify-center">
       {session ? (
         <div className="text-center">
-          <h1 className="text-3xl">You&apos;re already signed in!</h1>
+          <h1 className="text-3xl">Loading...</h1>
         </div>
       ) : (
         <>
