@@ -9,8 +9,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const supabase = useSupabaseClient();
   const user = useUser();
 
-  function handleSignout() {
-    supabase.auth.signOut();
+  async function handleSignout() {
+    await supabase.auth.signOut();
+    // if (router.pathname === "/") router.reload();
     router.push("/");
   }
   return (
